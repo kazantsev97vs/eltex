@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Teacher extends User {
-    private List<Subject> subjectList;
+    private List<Subject> subjectList = new ArrayList<>();
 
     Teacher addSubject (Subject subject) {
         subjectList.add(subject);
@@ -53,16 +53,17 @@ public class Teacher extends User {
     public void fillAttributesFromCSV(String path) {
 //        String[] values = FileTools.read(path).split(getPATTERN());
 
+
         String[] values = Parser.parseFromString(FileTools.read(path), getPATTERN());
         setId(Integer.parseInt(values[0]));
         setName(values[1]);
         setSurname(values[2]);
         setPatronymic(values[3]);
         setPhoneNumber(values[4]);
-        setSubjectList(values[5]);
+        setSubjectListStr(values[5]);
     }
 
-    public void setSubjectList(String line) {
+    public void setSubjectListStr(String line) {
         String[] lines = line.substring(1, line.length() - 1).split(", ");
 
         Subject[] subjects = new Subject[lines.length];

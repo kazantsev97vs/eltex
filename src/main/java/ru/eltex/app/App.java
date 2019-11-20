@@ -21,7 +21,7 @@ public class App {
         Student[] students = new Student[5];
         Teacher[] teachers = new Teacher[3];
 
-        List<Subject> subjectList = new ArrayList<>();
+        ArrayList<Subject> subjectList = new ArrayList<>();
         subjectList.add(new Subject().setId(1).setName("Mathematics").setNumberOfHours(10));
         subjectList.add(new Subject().setId(2).setName("Russian").setNumberOfHours(12));
         subjectList.add(new Subject().setId(3).setName("Informatics").setNumberOfHours(15));
