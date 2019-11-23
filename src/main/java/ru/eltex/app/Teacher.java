@@ -2,37 +2,39 @@ package ru.eltex.app;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ru.eltex.app.abstractions.User;
 import ru.eltex.app.tools.FileTools;
 import ru.eltex.app.tools.Parser;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Teacher extends User {
-    private List<Subject> subjectList = new ArrayList<>();
+    private List<Course> courseList = new ArrayList<>();
 
-    Teacher addSubject (Subject subject) {
-        subjectList.add(subject);
+    Teacher addSubject (Course course) {
+        courseList.add(course);
         return this;
     }
 
-    Teacher removeSubject (Subject subject) {
-        subjectList.remove(subject);
+    Teacher removeSubject (Course course) {
+        courseList.remove(course);
         return this;
     }
 
     Teacher removeSubject (int index) {
-        subjectList.remove(index);
+        courseList.remove(index);
         return this;
     }
 
-    public List<Subject> getSubjectList() {
-        return subjectList;
+    public List<Course> getSubjectList() {
+        return courseList;
     }
 
-    public Teacher setSubjectList(List<Subject> subjectList) {
-        this.subjectList = subjectList;
+    public Teacher setSubjectList(List<Course> courseList) {
+        this.courseList = courseList;
         return this;
     }
 
@@ -45,7 +47,7 @@ public class Teacher extends User {
                 getSurname(),
                 getPatronymic(),
                 getPhoneNumber(),
-                String.valueOf(subjectList)
+                String.valueOf(courseList)
             }, getPATTERN()));
     }
 
@@ -66,18 +68,18 @@ public class Teacher extends User {
     public void setSubjectListStr(String line) {
         String[] lines = line.substring(1, line.length() - 1).split(", ");
 
-        Subject[] subjects = new Subject[lines.length];
+        Course[] courses = new Course[lines.length];
 
         for (int i = 0; i < lines.length; i++) {
 
-            String[] subjectLine = lines[i].split(" ");
-            subjects[i] = new Subject()
-                    .setId(Integer.parseInt(subjectLine[0]))
-                    .setName(subjectLine[1])
-                    .setNumberOfHours(Integer.parseInt(subjectLine[2]));
+            String[] courseLine = lines[i].split(" ");
+            courses[i] = new Course()
+                    .setId(Integer.parseInt(courseLine[0]))
+                    .setName(courseLine[1])
+                    .setNumberOfHours(Integer.parseInt(courseLine[2]));
         }
 
-        subjectList = Arrays.asList(subjects);
+        courseList = Arrays.asList(courses);
     }
 
 
@@ -118,8 +120,19 @@ public class Teacher extends User {
         }
     }
 
+    public static void main(String[] args) {
+        Teacher t = new Teacher();
+        Field[] fields = Teacher.class.getDeclaredFields();
+
+        for (Field f :
+                fields) {
+            System.out.println(f.getName());
+        }
+        System.out.println();
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "\nsubjectList: " + getSubjectList();
+        return super.toString() + "\ncourseList: " + getSubjectList();
     }
 }

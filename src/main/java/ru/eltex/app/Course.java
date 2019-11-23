@@ -1,6 +1,6 @@
 package ru.eltex.app;
 
-public class Subject {
+public class Course {
     private Integer id;
     private String name;
     private Integer numberOfHours;
@@ -9,7 +9,7 @@ public class Subject {
         return id;
     }
 
-    public Subject setId(Integer id) {
+    public Course setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -18,7 +18,7 @@ public class Subject {
         return name;
     }
 
-    public Subject setName(String name) {
+    public Course setName(String name) {
         this.name = name;
         return this;
     }
@@ -27,7 +27,7 @@ public class Subject {
         return numberOfHours;
     }
 
-    public Subject setNumberOfHours(Integer numberOfHours) {
+    public Course setNumberOfHours(Integer numberOfHours) {
         this.numberOfHours = numberOfHours;
         return this;
     }

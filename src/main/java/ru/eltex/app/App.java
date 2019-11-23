@@ -1,11 +1,7 @@
 package ru.eltex.app;
 
 
-import ru.eltex.app.tools.FileTools;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class App {
     public static final String DIR_PATH = "data/";
@@ -21,10 +17,10 @@ public class App {
         Student[] students = new Student[5];
         Teacher[] teachers = new Teacher[3];
 
-        ArrayList<Subject> subjectList = new ArrayList<>();
-        subjectList.add(new Subject().setId(1).setName("Mathematics").setNumberOfHours(10));
-        subjectList.add(new Subject().setId(2).setName("Russian").setNumberOfHours(12));
-        subjectList.add(new Subject().setId(3).setName("Informatics").setNumberOfHours(15));
+        ArrayList<Course> subjectList = new ArrayList<>();
+        subjectList.add(new Course().setId(1).setName("Mathematics").setNumberOfHours(10));
+        subjectList.add(new Course().setId(2).setName("Russian").setNumberOfHours(12));
+        subjectList.add(new Course().setId(3).setName("Informatics").setNumberOfHours(15));
 
         teachers[0] = new Teacher();
         teachers[0]

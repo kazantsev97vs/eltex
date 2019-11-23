@@ -2,6 +2,7 @@ package ru.eltex.app;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ru.eltex.app.abstractions.User;
 import ru.eltex.app.tools.FileTools;
 import ru.eltex.app.tools.Parser;
 

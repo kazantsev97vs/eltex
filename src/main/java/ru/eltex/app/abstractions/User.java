@@ -1,4 +1,4 @@
-package ru.eltex.app;
+package ru.eltex.app.abstractions;
 import ru.eltex.app.interfaces.CSV;
 import ru.eltex.app.interfaces.JSON;
 
@@ -11,7 +11,7 @@ public abstract class User implements CSV, JSON {
     private String patronymic;
     private String phoneNumber;
 
-    String getPATTERN() {
+    public String getPATTERN() {
         return ";";
     }
 
