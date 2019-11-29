@@ -19,7 +19,7 @@ public class TeacherController extends AbstractController <Teacher, Integer> {
 
 
     @Override
-    public List getAll() {
+    public List<Teacher> getAll() {
         createConnection();
         List<Teacher> teachers = new ArrayList<>();
         Statement statement = createStatement();
@@ -139,7 +139,7 @@ public class TeacherController extends AbstractController <Teacher, Integer> {
 
     public static void main(String[] args) {
         TeacherController controller = new TeacherController();
-        List teachers = controller.getAll();
+        List<Teacher> teachers = controller.getAll();
 
 
         System.out.println(teachers);
@@ -157,7 +157,7 @@ public class TeacherController extends AbstractController <Teacher, Integer> {
         teachers = controller.getAll();
         System.out.println(teachers);
 
-        boolean isDeleted = controller.delete(1);
+        boolean isDeleted = controller.delete(8);
         System.out.println(isDeleted);
 
         teachers = controller.getAll();

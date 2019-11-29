@@ -1,4 +1,4 @@
-package ru.eltex.app.abstractions;
+package ru.eltex.app.entity;
 import ru.eltex.app.interfaces.CSV;
 import ru.eltex.app.interfaces.JSON;
 
