@@ -14,8 +14,9 @@ public class Student extends User {
         return numberOfAccountBook;
     }
 
-    public void setNumberOfAccountBook(Integer numberOfAccountBook) {
+    public Student setNumberOfAccountBook(Integer numberOfAccountBook) {
         this.numberOfAccountBook = numberOfAccountBook;
+        return this;
     }
 
     @Override

@@ -7,6 +7,7 @@ mainClassName = "ru.eltex.app.App"
 group 'ru.eltex.app'
 version '1.0-SNAPSHOT'
 
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -21,7 +22,7 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.0'
 
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    // compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
+//     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
 
     compile files('C:\\Program Files (x86)\\MySQL\\Connector J 8.0\\mysql-connector-java-8.0.18.jar')
 }

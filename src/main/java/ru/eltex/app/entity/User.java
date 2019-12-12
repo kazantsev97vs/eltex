@@ -4,7 +4,7 @@ import ru.eltex.app.interfaces.JSON;
 
 import java.lang.reflect.Field;
 
-public abstract class User implements CSV, JSON {
+public abstract class User extends Person implements CSV, JSON {
     private Integer id;
     private String name;
     private String surname;
